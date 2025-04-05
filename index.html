@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mi Biografia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Patrick Hand', cursive; background: #b6ebf1cd;
+      }
+      .menu {
+        background: #3e7f70; padding: 10px; text-align: center;
+      }
+      .menu button {
+        margin: 0 10px;
+        padding: 12px 24px;
+        background: #3e7f70;
+        color: #000000;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: 'Patrick Hand', cursive;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease, transform 0.2s;
+      }
+      .menu button:hover {
+        background: #b6ebf1cd;
+        transform: scale(1.05);
+      }
+
+
+    #bio { display: block; }
+   
+    #ext { display: none; }
+    .iframe-container { width: 100%; height: 100vh; }
+    .iframe-container iframe { width: 100%; height: 100%; border: none; }
+  
+    .container { display: flex; min-height: 100vh; }
+    .left {
+  width: 30%;
+  background: #3e7f70;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border:0px
+}
+
+.right {
+  width: 70%;
+  background: #b6ebf1cd;
+  padding: 20px;
+  text-align: center;
+}
+
+    h3, h4, h5 { margin: 10px 0; }
+    .section { margin-bottom: 20px; }
+    .skill { display: inline-block; background: rgb(45, 83, 97); color: #fff; padding: 5px 10px; margin: 3px; border-radius: 3px; }
+    @media (max-width: 768px) { .container { flex-direction: column; } }
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <button onclick="showSection('Biografía')"><h3>Biografía</h3></button>
+    <button onclick="showSection('Presentacion')"><h3>Presentación</h3></button>
+    <button onclick="showSection('Mimusica')"><h3>Mi musica</h3></button>
+  </div>
+
+  <div id="bio">
+    <div class="container">
+
+      <div class="left">
+        <img src="tf.jpeg" alt="Foto de Perfil">
+        <h1>Erick Mera</h1>
+        <h2>Estudiante de 5to Tic's </h2>
+        <div class="section">
+          <h3>Contacto</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Tel:</strong> +593-993367796</li>
+            <li><strong>Email:</strong> erick.mera.santader@utelvtedu.ec</li>
+            <li><strong>Dirección:</strong> Santo Domingo</li>
+          </ul>
+        </div>
+          
+        <div class="section">
+          <h3>Idiomas</h3>
+          <p>Español</p>
+          
+        </div>
+      </div>
+      <div class="social-links" style="text-align: center; margin: 20px;">
+        <a href="https://www.instagram.com/erickm163/" target="_blank">
+          <img src="insta.jpeg" alt="Instagram" width="40" height="40" style="margin-right: 10px;" />
+        </a>
+        <a href="https://www.facebook.com/ericksteeven.merasantander" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" 
+               alt="Facebook" width="40" height="40" style="margin-right: 10px;"/>
+        </a>
+      </div>
+      <div class="right">
+        <div class="section">
+          <h1>Sobre mi</h3>
+          <p><h3>Soy un chico muy paciente y me gusta mucho difrutar de la comida y la musica, tambien soy bueno jugando algunos tipos de videojuegos, me gusta hacer deporte,
+            soy alto midiendo aproximadamente 1.90m de altura, me gusta deapool, las camionetas Ford y las motos en especial la yamaha mt-09</h3> </p>
+          
+        </div>
+        <div class="section">
+          <h1>Experiencia Laboral</h3>
+          <p><b> Oficial de albañil</b> (2024-2024)</p>
+          <p><strong>Trabajador de medio tiempo en Parilladas</strong>(2024-2025)</p>
+          <br>
+         
+        </div>
+        <div class="section">
+          <h1>Estudios</h1>
+          <p>Cursando la carrera de Tics </p>
+          <p><b>Universidad "Luis Vargas Torres de Esmeraldas"</b></p>
+          <p>Bachiller en ciencias</p>
+          <p><b>Unidad Educativa "Ernesto Alban Mosquera"</b></p>
+        </div>
+        
+        <div class="section">
+          <h1>Habilidades</h1>
+          <div class="skill">Adaptabilidad</div>
+          <div class="skill"></div>
+          <div class="skill">Paciencia a full</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ext" class="iframe-container">
+    <iframe id="extFrame" src=""></iframe>
+  </div>
+
+  <script>
+    function showSection(section) {
+      const bio = document.getElementById('bio');
+      const ext = document.getElementById('ext');
+      const frame = document.getElementById('extFrame');
+
+      if (section === 'Biografía') {
+ 
+        bio.style.display = 'block';
+        ext.style.display = 'none';
+        frame.src = "";
+      } else if (section === 'Presentacion') {
+      
+        frame.src = "Presentacion.html";
+        bio.style.display = 'none';
+        ext.style.display = 'block';
+      } else if (section === 'Mimusica') {
+        
+        frame.src = "Mimusica.html";
+        bio.style.display = 'none';
+        ext.style.display = 'block';
+      }
+    }
+    
+  </script>
+  
+</body>
+</html>
